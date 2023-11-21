@@ -3,8 +3,35 @@
   "type": "array",
   "items": {
     "type": "object",
-    "required": [],
+    "required": [
+      "id",
+      "name",
+      "number",
+      "balance",
+      "currency"
+    ],
     "additionalProperties": false,
-    "properties": {}
+    "properties": {
+      "id": {
+        "type": "number",
+        "minimum": 0,
+        "exclusiveMaximum": 3
+
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "number": {
+        "type": "string",
+        "pattern": "^•• \\d{4}$"
+      },
+      "balance":{ "pattern":"^[RUB][USD]*$",
+        "type": "integer"
+      },
+      "currency": {
+        "type": "string"
+      }
     }
   }
+}
